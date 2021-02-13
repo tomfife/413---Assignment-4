@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Suggest Your Favorite Restaurants";
+}
+
+@model ProvoTop5Restaurants.Models.Suggestion 
+
+<br />
+<br />
+
+<div class="card border-primary mb-3 mx-auto" style="width: 35rem;">
+
+    <div class="card-title text-center" style="padding: 15px">
+        <h4>Below you can submit your favorite restaurants in Provo for future consideration.</h4>
+    </div>
+
+    <form method="post">
+        <div class="col">
+            <div>
+                <input asp-for="Name" type="text" class="form-control" placeholder="First & Last Name" />
+            </div>
+            <br />
+
+            <div>
+                <input asp-for="RestaurantName" type="text" class="form-control" placeholder="Restaurant Name" />
+            </div>
+            <br />
+
+            <div>
+                <input asp-for="FavDish" type="text" class="form-control" placeholder="Favorite Dish (Optional)" />
+            </div>
+            <br />
+
+            <div>
+                <input asp-for="PhoneNum" type="tel" class="form-control" placeholder="Restaurant Phone #" />
+            </div>
+            <br />
+        </div>
+
+        <div class="text-center" style="padding: 20px">
+            <button type="submit" class="btn btn-primary border-secondary">Submit</button>
+        </div>
+
+        <div asp-validation-summary="All"></div> <!--This makes it show all error messages-->
+    </form>
+
+</div>
+<br />
+<br />
+<br />
+<br />

@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Provo's Top 5 Restaurants";
+}
+
+@model List<ProvoTop5Restaurants.Models.Restaurant>
+
+<ul>
+
+</ul>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+
+        @foreach (var restaurant in Model)
+        {
+            <div class="col-md-auto" style="margin-top: 50px">
+                <div class="card border-primary mb-3" style="width: 18rem;">
+                    <div class="text-center">
+                        <img src="~/img/@restaurant.ImageSrc" class="card-img-top" alt="@restaurant.RestaurantName" style="max-width: 175px; max-height: 150px; width: auto; height: auto;">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">@restaurant.RestaurantName</h4>
+                        <ul class="card-text">
+                            <li><b>Rank:</b> @restaurant.Rank</li>
+                            <li><b>Favorite Dish:</b> @restaurant.FavDish</li>
+                            <li><b>Address:</b> @restaurant.Address</li>
+                            <li><b>Phone #:</b> @restaurant.PhoneNum</li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="@restaurant.WebsiteLink" class="btn btn-primary border-secondary">Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />

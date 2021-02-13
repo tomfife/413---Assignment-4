@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "List of Suggested Restaurants";
+}
+
+@model List<ProvoTop5Restaurants.Models.Suggestion>
+
+<br />
+<br />
+<div class="card border-primary mb-3 mx-auto" style="width: 100rem;">
+
+    <div class="card-title text-center" style="padding: 15px">
+        <h2>The following have been suggested to be honored as one of Provo's Top 5 Restaurants!</h2>
+    </div>
+
+    <table class="table table-striped table-light" style="width: auto">
+        <thead>
+            <tr><th>Submitter</th><th>Restaurant Name</th><th>Favorite Dish</th><th>Phone Number</th></tr>
+        </thead>
+
+        <tbody>
+            @foreach (ProvoTop5Restaurants.Models.Suggestion suggestion in Model)
+            {
+                <tr>
+                    <td>@suggestion.Name</td>
+                    <td>@suggestion.RestaurantName </td>
+                    <td>@suggestion.FavDish </td>
+                    <td>@suggestion.PhoneNum </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
